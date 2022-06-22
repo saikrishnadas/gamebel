@@ -1,31 +1,31 @@
+import {useState} from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import GameCollections from "../components/GameCollections";
 import MenuBar from "../components/MenuBar";
 import NavBar from "../components/NavBar";
-import { sanityClient, urlFor } from "../sanity";
+import { sanityClient } from "../sanity";
+import { useEffect } from "react";
 
 const Home: NextPage = ({games}:any) => {
-  // console.log(games)
+  const [titles,setTitles] = useState([])
+  useEffect(() => {
+    const uniqueValues = new Set();
+    games.forEach((game:any) => uniqueValues.add(game.category.title));
+    const uniqueCategories:any = Array.from(uniqueValues);
+    setTitles(uniqueCategories)
+  },[])
   return (
     <div className="h-screen bg-[#061024df]">
       <Head>
         <title>Gamebel</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <SideBar /> */}
-      {/* Nav Bar */}
       <NavBar />
       <MenuBar />
-
       <div className="ml-20 mt-10 h-[35rem] overflow-scroll scrollbar-hide">
-      <GameCollections title="Casino" games={games}/>
-      {/* <GameCollections title="Slots"/>
-      <GameCollections title="Live Casino"/>
-      <GameCollections title="Game shows"/> */}
+      <GameCollections title={titles} games={games}/>
       </div>
-
       </div>
   );
 };
