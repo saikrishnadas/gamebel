@@ -47,10 +47,9 @@ function Game({gameIframe}:GameProps){
         <div className="flex h-14 flex-col grow">
         <NavBar />
         <MenuBar />
-        <div className="ml-20">
-            <div className="bg-[#06102400] h-[500px] w-[1000px] mt-10 ml-20">
+        <div className="">
+            <div className="bg-[#06102400] mt-10 flex justify-center">
               {gameIframe &&  <iframe src={gameIframe[0].iframe} height="500" width="1000"/>}
-           
             </div>
         </div>
         </div>

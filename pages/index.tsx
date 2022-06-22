@@ -16,14 +16,14 @@ const Home: NextPage = ({games}:any) => {
     setTitles(uniqueCategories)
   },[])
   return (
-    <div className="h-screen bg-[#061024df]">
+    <div className="h-[100%] bg-[#061024df]">
       <Head>
         <title>Gamebel</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
       <MenuBar />
-      <div className="ml-20 mt-10 h-[35rem] overflow-scroll scrollbar-hide">
+      <div className="ml-20 mt-10 overflow-scroll scrollbar-hide">
       <GameCollections title={titles} games={games}/>
       </div>
       </div>
