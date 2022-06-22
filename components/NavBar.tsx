@@ -1,10 +1,13 @@
+import Link from "next/link"
 import SearchBar from "./SearchBar"
 function NavBar(){
     return(
         <>
         <div className="flex justify-between items-center h-14 pl-10 pr-10 pt-5 pb-5 border-b border-[#06102454] text-white grow">
         <div>
-          <h1 className="text-white">LOGO</h1>
+          <Link href="/">
+          <h1 className="text-white cursor-pointer">LOGO</h1>
+          </Link>
         </div>
         <div>
           <SearchBar />

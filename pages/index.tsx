@@ -19,7 +19,7 @@ const Home: NextPage = ({games}:any) => {
       <NavBar />
       <MenuBar />
 
-      <div className="ml-20 mt-10 h-[35rem] overflow-scroll scrollbar-hide" onClick={() => console.log("Clicked")}>
+      <div className="ml-20 mt-10 h-[35rem] overflow-scroll scrollbar-hide">
       <GameCollections title="Casino" games={games}/>
       {/* <GameCollections title="Slots"/>
       <GameCollections title="Live Casino"/>
