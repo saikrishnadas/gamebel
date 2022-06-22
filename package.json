@@ -8,8 +8,11 @@
   "dependencies": {
     "@headlessui/react": "^1.6.5",
     "@heroicons/react": "^1.0.6",
+    "@sanity/image-url": "^1.0.1",
     "antd": "^4.21.3",
     "next": "latest",
+    "next-sanity": "^0.5.2",
+    "next-sanity-image": "^3.2.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "tailwind-scrollbar-hide": "^1.1.7"
