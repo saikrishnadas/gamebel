@@ -6,6 +6,7 @@ import MenuBar from "../components/MenuBar";
 import NavBar from "../components/NavBar";
 import { sanityClient } from "../sanity";
 import { useEffect } from "react";
+import Footer from "../components/Footer";
 
 const Home: NextPage = ({games}:any) => {
   const [titles,setTitles] = useState([])
@@ -26,6 +27,7 @@ const Home: NextPage = ({games}:any) => {
       <div className="ml-2 mr-2 lg:ml-20 mt-10 overflow-scroll scrollbar-hide">
       <GameCollections title={titles} games={games}/>
       </div>
+      <Footer />
       </div>
   );
 };

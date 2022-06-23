@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import React from "react";
+import Footer from '../../components/Footer';
 import MenuBar from '../../components/MenuBar'
 import NavBar from '../../components/NavBar'
 import { sanityClient, urlFor } from "../../sanity";
@@ -38,6 +39,7 @@ interface paramsProps {
 function Game({gameIframe}:GameProps){
     const router = useRouter()
     return( 
+      <>
         <div className="h-screen bg-[#061024df]">
         {/* <Head>
           <title>Gamebel</title>
@@ -59,9 +61,11 @@ function Game({gameIframe}:GameProps){
             </div>
         </div>
         </div>
-        {/* Gallery */}
         </div>
         </div>
+        <Footer />
+        
+        </>
     );
 }
 
