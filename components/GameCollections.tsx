@@ -10,32 +10,27 @@ interface GameCollectionsProps {
 }
 
 function GameCollections({ title, games }: GameCollectionsProps) {
-  const scrollRef = useRef<HTMLDivElement | any>(null);
 
-  const onClickScroll = (scrollOffset: number) => {
-    console.log(scrollOffset)
-    scrollRef.current.scrollLeft += scrollOffset;
-  };
   // console.log(games);
   // console.log(urlFor(games[0].thumbnail.asset).url()!)
   return (
     <>
-    {title.map((t:string) => (
-      <div key={t}>
+    {title.map((t:string,index:number) => (
+      <div key={index}>
       <div className="flex justify-between items-center mt-2 mr-2 lg:mt-10 lg:mr-20">
         <p className="text-white font-semibold mb-0 ml-6">{t}</p>
         <span className="flex">
-          <ChevronLeftIcon className="h-5 w-5 text-white cursor-pointer" onClick={()=> onClickScroll(-20)}/>
-          <ChevronRightIcon className="h-5 w-5 text-white cursor-pointer" onClick={() => onClickScroll(20)}/>
+          <ChevronLeftIcon className="h-5 w-5 text-white cursor-pointer" />
+          <ChevronRightIcon className="h-5 w-5 text-white cursor-pointer" />
         </span>
       </div>
-      <div className="flex mt-5 w-[24rem] md:w-[48rem] lg:w-[80rem] overflow-scroll overflow-y-clip scrollbar-hide" ref={scrollRef}>
+      {/* <div className="flex mt-5 w-[24rem] md:w-[48rem] lg:w-[80rem] overflow-scroll overflow-y-clip scrollbar-hide" ref={scrollRef}> */}
+      <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7">
         {games
           .filter((game: any) => game.category.title === t)
-          .map((filteredGame: any) => (
-            <>
+          .map((filteredGame: any,index:number) => (
+            <div key={index}>
             <Link
-              key={filteredGame.slug.current}
               href={{
                 pathname: `/game/${filteredGame.slug.current}`,
               }}
@@ -52,7 +47,7 @@ function GameCollections({ title, games }: GameCollectionsProps) {
                 </div>
               </div>
             </Link>
-            </>
+            </div>
           ))}
       </div>
       </div>
