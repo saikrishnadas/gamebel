@@ -1,75 +1,26 @@
 import Link from "next/link"
 import SearchBar from "./SearchBar"
-<Navbar
-  fluid={true}
-  rounded={true}
->
-  <Navbar.Brand href="https://flowbite.com/">
-    <img
-      src="https://flowbite.com/docs/images/logo.svg"
-      className="mr-3 h-6 sm:h-9"
-      alt="Flowbite Logo"
-    />
-    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-      Flowbite
-    </span>
-  </Navbar.Brand>
-  <div className="flex md:order-2">
-    <Dropdown
-      arrowIcon={false}
-      inline={true}
-      label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true}/>}
-    >
-      <Dropdown.Header>
-        <span className="block text-sm">
-          Bonnie Green
-        </span>
-        <span className="block truncate text-sm font-medium">
-          name@flowbite.com
-        </span>
-      </Dropdown.Header>
-      <Dropdown.Item>
-        Dashboard
-      </Dropdown.Item>
-      <Dropdown.Item>
-        Settings
-      </Dropdown.Item>
-      <Dropdown.Item>
-        Earnings
-      </Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item>
-        Sign out
-      </Dropdown.Item>
-    </Dropdown>
-    <Navbar.Toggle />
-  </div>
-  <Navbar.Collapse>
-    <Navbar.Link
-      href="/navbars"
-      active={true}
-    >
-      Home
-    </Navbar.Link>
-    <Navbar.Link href="/navbars">
-      About
-    </Navbar.Link>
-    <Navbar.Link href="/navbars">
-      Services
-    </Navbar.Link>
-    <Navbar.Link href="/navbars">
-      Pricing
-    </Navbar.Link>
-    <Navbar.Link href="/navbars">
-      Contact
-    </Navbar.Link>
-  </Navbar.Collapse>
-</Navbar>
-
 function NavBar(){
     return(
         <>
-        <Navbar></Navbar>
+        <div className="flex justify-between items-center h-16 pr-5 pl-5 lg:h-14 lg:pl-10 lg:pr-10 pt-5 pb-5 border-b border-[#06102454] text-white grow">
+        <div>
+          <Link href="/">
+          <h1 className="text-white cursor-pointer">LOGO</h1>
+          </Link>
+        </div>
+        <div>
+          <SearchBar />
+        </div>
+        <div className="flex items-center">
+          <div className="mr-5 lg:mr-10">
+            Sign In
+          </div>
+          <span className="bg-[#007AFD] p-2 rounded-md">
+            Register
+          </span>
+        </div>
+        </div>
         </>
       
     )
