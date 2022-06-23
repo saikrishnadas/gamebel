@@ -1,6 +1,8 @@
+import { Progress } from "antd";
+
 function Footer() {
   return (
-    <footer className="p-4 bg-white shadow md:px-6 md:py-8 dark:bg-gray-800">
+    <footer className="p-4 bg-dark shadow md:px-6 md:py-8 dark:bg-gray-800">
       <div className="sm:flex sm:items-center sm:justify-between">
         <span  className="flex items-center mb-4 sm:mb-0">
         {/* <a
@@ -8,7 +10,7 @@ function Footer() {
           className="flex items-center mb-4 sm:mb-0"
         > */}
           {/* <img src="/docs/images/logo.svg" className="mr-3 h-8" alt="Flowbite Logo"> */}
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             LOGO
           </span>
         {/* </a> */}
@@ -36,6 +38,7 @@ function Footer() {
           </li>
         </ul>
       </div>
+      <Progress percent={89} status="active" />
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © 2022{" "}

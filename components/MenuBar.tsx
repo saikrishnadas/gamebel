@@ -1,5 +1,5 @@
 import "antd/dist/antd.css";
-import { DownOutlined, SmileOutlined } from "@ant-design/icons";
+import { DownOutlined, SmileOutlined , MailOutlined } from "@ant-design/icons";
 import { Dropdown, Menu, Space } from "antd";
 
 const menuCasino = (
