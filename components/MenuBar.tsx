@@ -7,7 +7,6 @@ const menuCasino = (
     items={[
       {
         key: "1",
-        icon="{<AppstoreOutlined />}",
         label: (
           <p>
             Stake Originals
