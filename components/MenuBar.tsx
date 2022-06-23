@@ -107,7 +107,7 @@ function MenuBar() {
   return (
     <>
       <div className="flex justify-evenly items-center pl-5 pr-5 lg:pl-10 lg:pr-10 pt-4 pb-4 text-white shadow-lg">
-        <Dropdown icon={AppstoreOutlined} overlay={menuCasino} trigger={['click']}>
+        <Dropdown overlay={menuCasino} trigger={['click']}>
             <Space className="cursor-pointer">Casino</Space>
         </Dropdown>
 
