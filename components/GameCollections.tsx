@@ -10,10 +10,11 @@ interface GameCollectionsProps {
 }
 
 function GameCollections({ title, games }: GameCollectionsProps) {
-  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | any>(null);
 
   const onClickScroll = (scrollOffset: number) => {
-    scrollRef!.current!.scrollLeft += scrollOffset;
+    console.log(scrollOffset)
+    scrollRef.current.scrollLeft += scrollOffset;
   };
   // console.log(games);
   // console.log(urlFor(games[0].thumbnail.asset).url()!)
@@ -21,14 +22,14 @@ function GameCollections({ title, games }: GameCollectionsProps) {
     <>
     {title.map((t:string) => (
       <div key={t}>
-      <div className="flex justify-between items-center mt-10 mr-20">
+      <div className="flex justify-between items-center mt-2 mr-2 lg:mt-10 lg:mr-20">
         <p className="text-white font-semibold mb-0 ml-6">{t}</p>
         <span className="flex">
           <ChevronLeftIcon className="h-5 w-5 text-white cursor-pointer" onClick={()=> onClickScroll(-20)}/>
           <ChevronRightIcon className="h-5 w-5 text-white cursor-pointer" onClick={() => onClickScroll(20)}/>
         </span>
       </div>
-      <div className="flex mt-5 w-[80rem] overflow-scroll overflow-y-clip scrollbar-hide" ref={scrollRef}>
+      <div className="flex mt-5 w-[24rem] md:w-[48rem] lg:w-[80rem] overflow-scroll overflow-y-clip scrollbar-hide" ref={scrollRef}>
         {games
           .filter((game: any) => game.category.title === t)
           .map((filteredGame: any) => (
@@ -51,24 +52,6 @@ function GameCollections({ title, games }: GameCollectionsProps) {
                 </div>
               </div>
             </Link>
-                        <Link
-                        key={filteredGame.slug.current}
-                        href={{
-                          pathname: `/game/${filteredGame.slug.current}`,
-                        }}
-                      >
-                        <div className="flex flex-col ml-5 mb-5">
-                          <div className="bg-[#EE5513] rounded-lg h-[200px] w-[150px] cursor-pointer transform transition duration-500 hover:scale-110">
-                            <Image
-                              src={urlFor(filteredGame.thumbnail.asset).url()!}
-                              alt=""
-                              width={150}
-                              height={200}
-                              className="rounded-lg"
-                            />
-                          </div>
-                        </div>
-                      </Link>
             </>
           ))}
       </div>

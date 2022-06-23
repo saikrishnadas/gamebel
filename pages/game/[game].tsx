@@ -48,8 +48,14 @@ function Game({gameIframe}:GameProps){
         <NavBar />
         <MenuBar />
         <div className="">
-            <div className="bg-[#06102400] mt-10 flex justify-center">
-              {gameIframe &&  <iframe src={gameIframe[0].iframe} height="500" width="1000"/>}
+            <div className="hidden bg-[#06102400] mt-10 lg:flex justify-center md:hidden">
+              {gameIframe &&  <iframe src={gameIframe[0].iframe} height="500" width="1000" className='hidden md:hidden lg:block'/>}
+            </div>
+            <div className="lg:hidden bg-[#06102400] mt-10 flex justify-center md:hidden">
+              {gameIframe &&  <iframe src={gameIframe[0].iframe} height="500" width="300" className='block md:hidden lg:hidden'/>}
+            </div>
+            <div className="hidden md:flex lg:hidden bg-[#06102400] mt-5 justify-center">
+              {gameIframe &&  <iframe src={gameIframe[0].iframe} height="400" width="600" className='md:h-fit hidden md:flex lg:hidden'/>}
             </div>
         </div>
         </div>

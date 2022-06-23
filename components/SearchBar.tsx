@@ -24,7 +24,7 @@ export default function SearchBar() {
         )
 
   return (
-    <div className="w-72">
+    <div className="hidden lg:block lg:w-72">
       <Combobox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
           <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-[#0610246c] text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">

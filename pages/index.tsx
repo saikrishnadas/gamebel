@@ -23,7 +23,7 @@ const Home: NextPage = ({games}:any) => {
       </Head>
       <NavBar />
       <MenuBar />
-      <div className="ml-20 mt-10 overflow-scroll scrollbar-hide">
+      <div className="ml-2 mr-2 lg:ml-20 mt-10 overflow-scroll scrollbar-hide">
       <GameCollections title={titles} games={games}/>
       </div>
       </div>
