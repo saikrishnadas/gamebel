@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import { Fragment, useState } from "react";
 
 function NavBar() {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
