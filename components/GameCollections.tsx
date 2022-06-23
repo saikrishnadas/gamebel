@@ -19,10 +19,10 @@ function GameCollections({ title, games }: GameCollectionsProps) {
       <div key={index}>
       <div className="flex justify-between items-center mt-2 mr-2 lg:mt-10 lg:mr-20">
         <p className="text-white font-semibold mb-0 ml-6">{t}</p>
-        <span className="flex">
+        {/* <span className="flex">
           <ChevronLeftIcon className="h-5 w-5 text-white cursor-pointer" />
           <ChevronRightIcon className="h-5 w-5 text-white cursor-pointer" />
-        </span>
+        </span> */}
       </div>
       {/* <div className="flex mt-5 w-[24rem] md:w-[48rem] lg:w-[80rem] overflow-scroll overflow-y-clip scrollbar-hide" ref={scrollRef}> */}
       <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7">
