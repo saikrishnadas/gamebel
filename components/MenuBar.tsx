@@ -1,5 +1,5 @@
 import "antd/dist/antd.css";
-import { DownOutlined, SmileOutlined ,AppstoreOutlined } from "@ant-design/icons";
+import { DownOutlined, SmileOutlined , MailOutlined } from "@ant-design/icons";
 import { Dropdown, Menu, Space } from "antd";
 
 const menuCasino = (
@@ -107,8 +107,8 @@ function MenuBar() {
   return (
     <>
       <div className="flex justify-evenly items-center pl-5 pr-5 lg:pl-10 lg:pr-10 pt-4 pb-4 text-white shadow-lg">
-        <Dropdown overlay={menuCasino} trigger={['click']}>
-            <Space className="cursor-pointer" icon={AppstoreOutlined}>Casino</Space>
+        <Dropdown icon={AppstoreOutlined} overlay={menuCasino} trigger={['click']}>
+            <Space className="cursor-pointer">Casino</Space>
         </Dropdown>
 
         <Dropdown overlay={menuSports} trigger={['click']}>
